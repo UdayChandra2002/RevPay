@@ -28,7 +28,6 @@ public class MoneyRequestService {
         }
 
         requestDAO.createRequest(senderId, receiverId, amount);
-
         //------------------n
         Notification n = new Notification();
         n.setUserId(receiverId);
@@ -37,10 +36,6 @@ public class MoneyRequestService {
 
         notificationService.sendNotification(n);
         //-------------------n
-
-
-
-
     }
 
     /* ================= GET INCOMING REQUESTS ================= */
@@ -65,62 +60,45 @@ public class MoneyRequestService {
             throw new Exception("Money request not found.");
         }
 
-        int payerId = request.getReceiverId(); // person who pays
-        int payeeId = request.getSenderId();   // person who requested
+        int payerId = request.getReceiverId(); // who pays
+        int payeeId = request.getSenderId();   // who receives
         double amount = request.getAmount();
-        Wallet payerWallet = walletDAO.getWalletByUserId(payerId);
 
+        /* ✅ Validate wallet only */
+        Wallet payerWallet = walletDAO.getWalletByUserId(payerId);
 
         if (payerWallet == null) {
             throw new Exception("Wallet not found.");
         }
 
-        if (payerWallet.getBalance() < request.getAmount()) {
+        if (payerWallet.getBalance() < amount) {
             throw new Exception("Insufficient balance.");
         }
 
-        /* Update wallets */
-        walletDAO.updateBalance(
-                payerId,
-                payerWallet.getBalance() - request.getAmount()
-        );
-
-        Wallet payeeWallet = walletDAO.getWalletByUserId(payeeId);
-        walletDAO.updateBalance(
-                payeeId,
-                payeeWallet.getBalance() + request.getAmount()
-        );
-
-        /* Update request status */
+        /* ✅ Update request status */
         requestDAO.updateStatus(requestId, "ACCEPTED", null);
 
-        /* Record transaction */
+        /* ✅ SINGLE source of money movement */
         transactionService.sendMoney(
                 payerId,
                 payeeId,
-                request.getAmount()
+                amount
         );
 
-        //---------------n
-        NotificationService notificationService = new NotificationService();
-
-// payer
+        /* 🔔 Notifications */
         Notification n1 = new Notification();
         n1.setUserId(payerId);
         n1.setMessage("You paid ₹" + amount + " for a money request");
         n1.setType("REQUEST");
         notificationService.sendNotification(n1);
 
-// requester
         Notification n2 = new Notification();
         n2.setUserId(payeeId);
         n2.setMessage("Your money request of ₹" + amount + " was accepted");
         n2.setType("REQUEST");
         notificationService.sendNotification(n2);
-
-        //--------------n
-
     }
+
 
     /* ================= DECLINE REQUEST ================= */
 
