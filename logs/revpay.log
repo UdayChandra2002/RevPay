@@ -1,0 +1,25 @@
+2026-01-30 00:09:39 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:09:39 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-01-30 00:09:39 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:16:47 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:16:47 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-01-30 00:16:47 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:22:57 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:22:57 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-01-30 00:22:57 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:26:57 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:26:57 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-01-30 00:26:57 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:27:46 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 00:27:46 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-01-30 00:27:46 [main] INFO  com.revpay.main.RevPayApplication - ===================================
+2026-01-30 11:23:32 [main] ERROR com.revpay.main.RevPayApplication - Unexpected error occurred in application
+java.util.InputMismatchException: null
+	at java.base/java.util.Scanner.throwFor(Scanner.java:964) ~[?:?]
+	at java.base/java.util.Scanner.next(Scanner.java:1619) ~[?:?]
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2284) ~[?:?]
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2238) ~[?:?]
+	at com.revpay.menu.RegisterMenu.show(RegisterMenu.java:23) ~[classes/:?]
+	at com.revpay.menu.MainMenu.show(MainMenu.java:23) ~[classes/:?]
+	at com.revpay.main.RevPayApplication.main(RevPayApplication.java:21) [classes/:?]
+2026-01-30 11:23:32 [main] INFO  com.revpay.main.RevPayApplication - RevPay Application Stopped
