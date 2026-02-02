@@ -1,8 +1,7 @@
 package com.revpay.service;
 
-import com.revpay.dao.UserDAO;
+import com.revpay.model.SecurityQuestion;
 import com.revpay.model.User;
-import com.revpay.util.PasswordUtil;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class WalletServiceTest {
 
     private final WalletService walletService = new WalletService();
-    private final UserDAO userDAO = new UserDAO();
+    private final AuthService authService = new AuthService();
 
     @Test
     void testAddMoney() throws Exception {
@@ -19,12 +18,22 @@ public class WalletServiceTest {
         user.setFullName("Wallet Test");
         user.setEmail("wallet_" + System.currentTimeMillis() + "@mail.com");
         user.setPhone("8" + (int)(Math.random() * 1000000000));
-        user.setPasswordHash(PasswordUtil.hash("pass123"));
-        user.setTransactionPinHash(PasswordUtil.hash("1234"));
         user.setUserType("PERSONAL");
 
-        int userId = userDAO.createUser(user);
+        SecurityQuestion sq = new SecurityQuestion();
+        sq.setQuestion("Test question?");
+        sq.setAnswerHash("test");
 
+        //  REGISTER USER PROPERLY (creates wallet)
+        int userId = authService.registerUser(
+                user,
+                "pass123",
+                "1234",
+                sq,
+                null   // personal user → no business profile
+        );
+
+        //  ADD MONEY
         walletService.addMoney(userId, 500);
 
         double balance =
