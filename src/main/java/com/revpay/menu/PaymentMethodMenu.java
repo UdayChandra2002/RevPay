@@ -1,5 +1,6 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.PaymentMethod;
 import com.revpay.model.User;
 import com.revpay.service.PaymentMethodService;
@@ -8,9 +9,12 @@ import com.revpay.util.EncryptionUtil;
 import java.sql.Date;
 import java.util.Calendar;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PaymentMethodMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(PaymentMethodMenu.class);
     private final User user;
 
     public PaymentMethodMenu(User user) {
@@ -22,7 +26,7 @@ public class PaymentMethodMenu {
         PaymentMethodService service = new PaymentMethodService();
 
         while (true) {
-            System.out.println("""
+            logger.info("""
                 ===== PAYMENT METHODS =====
                 1. Add Card
                 2. View Cards
@@ -46,7 +50,7 @@ public class PaymentMethodMenu {
                         int pmId = sc.nextInt();
                         sc.nextLine();
                         service.removeCard(pmId, user.getUserId());
-                        System.out.println("Card removed successfully.");
+                        logger.info("Card removed successfully.");
                     }
 
                     case 4 -> {
@@ -101,6 +105,6 @@ public class PaymentMethodMenu {
 
         service.addCard(pm);
 
-        System.out.println("Card added successfully.");
+        logger.info("Card added successfully.");
     }
 }

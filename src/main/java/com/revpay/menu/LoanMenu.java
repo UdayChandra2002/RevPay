@@ -1,13 +1,17 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.Loan;
 import com.revpay.model.User;
 import com.revpay.service.LoanService;
 
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LoanMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(LoanMenu.class);
     private final User user;
 
     public LoanMenu(User user) {
@@ -25,7 +29,7 @@ public class LoanMenu {
         Scanner sc = new Scanner(System.in);
         LoanService loanService = new LoanService();
 
-        System.out.println("===== APPLY FOR BUSINESS LOAN =====");
+        logger.info("===== APPLY FOR BUSINESS LOAN =====");
 
         try {
             System.out.print("Enter Loan Amount: ");
@@ -55,11 +59,11 @@ public class LoanMenu {
 
             loanService.applyLoan(loan);
 
-            System.out.println(" Loan application submitted successfully!");
-            System.out.println("Status: APPLIED");
+            logger.info(" Loan application submitted successfully!");
+            logger.info("Status: APPLIED");
 
         } catch (Exception e) {
-            System.out.println(" Failed to apply for loan: " + e.getMessage());
+            logger.info(" Failed to apply for loan: " + e.getMessage());
         }
     }
 }

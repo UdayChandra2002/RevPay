@@ -1,5 +1,6 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.User;
 import com.revpay.service.TransactionService;
 import com.revpay.service.UserService;
@@ -7,9 +8,11 @@ import com.revpay.util.OTPUtil;
 import com.revpay.util.PasswordUtil;
 
 import java.util.Scanner;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class SendMoneyMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(SendMoneyMenu.class);
     private final User user;
 
     public SendMoneyMenu(User user) {
@@ -23,7 +26,7 @@ public class SendMoneyMenu {
         TransactionService transactionService = new TransactionService();
 
         try {
-            System.out.println("===== SEND MONEY =====");
+            logger.info("===== SEND MONEY =====");
             System.out.println("Select receiver lookup:");
             System.out.println("1. User ID");
             System.out.println("2. Email");
@@ -62,7 +65,7 @@ public class SendMoneyMenu {
             }
 
             if (receiver.getUserId() == user.getUserId()) {
-                System.out.println("You cannot send money to yourself.");
+                logger.info("You cannot send money to yourself.");
                 return;
             }
 
@@ -71,7 +74,7 @@ public class SendMoneyMenu {
             sc.nextLine();
 
             if (amount <= 0) {
-                System.out.println("Invalid amount.");
+                logger.info("Invalid amount.");
                 return;
             }
 
@@ -103,10 +106,10 @@ public class SendMoneyMenu {
                     amount
             );
 
-            System.out.println("Money sent successfully!");
+            logger.info("Money sent successfully!");
 
         } catch (Exception e) {
-            System.out.println("Failed to send money: " + e.getMessage());
+            logger.info("Failed to send money: " + e.getMessage());
         }
     }
 }

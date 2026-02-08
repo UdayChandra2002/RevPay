@@ -2,13 +2,19 @@ package com.revpay.menu;
 
 import java.util.Scanner;
 
+import com.revpay.main.RevPayApplication;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class MainMenu {
+    private static final Logger logger =
+            LogManager.getLogger(MainMenu.class);
 
     public void show() {
         Scanner sc = new Scanner(System.in);
 
         while (true) {
-            System.out.println("""
+            logger.info("""
                 ===== REV PAY =====
                 1. Register
                 2. Login

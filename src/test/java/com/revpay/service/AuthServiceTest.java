@@ -7,21 +7,21 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class WalletServiceTest {
+class AuthServiceTest {
 
-    private WalletService walletService;
     private AuthService authService;
+    private String email;
     private int userId;
 
     @BeforeEach
     void setup() throws Exception {
 
-        walletService = new WalletService();
         authService = new AuthService();
 
         User user = new User();
-        user.setFullName("Wallet Test User");
-        user.setEmail("wallet_" + System.currentTimeMillis() + "@mail.com");
+        user.setFullName("Auth Test User");
+        email = "auth_" + System.currentTimeMillis() + "@mail.com";
+        user.setEmail(email);
         user.setPhone("9" + (int)(Math.random() * 1000000000));
         user.setUserType("PERSONAL");
 
@@ -29,7 +29,7 @@ class WalletServiceTest {
         sq.setQuestion("Fav color?");
         sq.setAnswerHash("blue");
 
-        // ✅ Creates USER + WALLET (IMPORTANT)
+        // ✅ Create user + wallet
         userId = authService.registerUser(
                 user,
                 "password123",
@@ -41,40 +41,52 @@ class WalletServiceTest {
 
     /* ================= TEST 1 ================= */
     @Test
-    void testAddMoneySuccess() throws Exception {
+    void testLoginSuccess() throws Exception {
 
-        walletService.addMoney(userId, 500);
+        User loggedInUser =
+                authService.login(email, "password123");
 
-        double balance = walletService.getWallet(userId).getBalance();
-
-        assertEquals(500, balance);
+        assertNotNull(loggedInUser);
+        assertEquals(email, loggedInUser.getEmail());
     }
 
     /* ================= TEST 2 ================= */
     @Test
-    void testAddMoneyInvalidAmount() {
+    void testLoginWrongPassword() {
 
         Exception ex = assertThrows(
                 Exception.class,
-                () -> walletService.addMoney(userId, -100)
+                () -> authService.login(email, "wrongpass")
         );
 
-        assertEquals("Amount must be greater than zero.", ex.getMessage());
+        assertEquals("Invalid password", ex.getMessage());
     }
 
     /* ================= TEST 3 ================= */
     @Test
-    void testGetWalletBalanceInitiallyZero() throws Exception {
+    void testLoginUserNotFound() throws Exception {
 
-        double balance = walletService.getWallet(userId).getBalance();
+        User user =
+                authService.login("notfound@mail.com", "password123");
 
-        assertEquals(0, balance);
+        assertNull(user);
     }
 
     /* ================= TEST 4 ================= */
     @Test
-    void testWalletExistsAfterRegistration() throws Exception {
+    void testAccountLockedAfterMultipleFailures() {
 
-        assertNotNull(walletService.getWallet(userId));
+        for (int i = 0; i < 3; i++) {
+            try {
+                authService.login(email, "wrongpass");
+            } catch (Exception ignored) {}
+        }
+
+        Exception ex = assertThrows(
+                Exception.class,
+                () -> authService.login(email, "password123")
+        );
+
+        assertEquals("Account is locked", ex.getMessage());
     }
 }

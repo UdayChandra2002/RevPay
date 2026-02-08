@@ -1,12 +1,16 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.User;
 import com.revpay.service.BusinessAnalyticsService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
 public class BusinessAnalyticsMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(BusinessAnalyticsMenu.class);
     private final User user;
 
     public BusinessAnalyticsMenu(User user) {
@@ -20,7 +24,7 @@ public class BusinessAnalyticsMenu {
                 new BusinessAnalyticsService();
 
         while (true) {
-            System.out.println("""
+            logger.info("""
                 ===== BUSINESS ANALYTICS =====
                 1. Total Revenue
                 2. Outstanding Invoices

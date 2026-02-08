@@ -1,72 +1,75 @@
 package com.revpay.service;
 
-import com.revpay.dao.UserDAO;
 import com.revpay.model.SecurityQuestion;
 import com.revpay.model.User;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TransactionServiceTest {
+class TransactionServiceTest {
 
-    private final TransactionService transactionService =
-            new TransactionService();
+    private AuthService authService;
+    private WalletService walletService;
+    private TransactionService transactionService;
 
-    private final WalletService walletService =
-            new WalletService();
+    private int senderId;
+    private int receiverId;
 
-    private final UserDAO userDAO = new UserDAO();
+    @BeforeEach
+    void setup() throws Exception {
 
-    @Test
-    void testSendMoney() throws Exception {
+        authService = new AuthService();
+        walletService = new WalletService();
+        transactionService = new TransactionService();
 
-        AuthService authService = new AuthService();
-
-        /* ================= SENDER ================= */
+        /* ---------- SENDER ---------- */
         User sender = new User();
         sender.setFullName("Sender");
         sender.setEmail("sender_" + System.currentTimeMillis() + "@mail.com");
-        sender.setPhone("7" + (int) (Math.random() * 1000000000));
+        sender.setPhone("9" + (int)(Math.random() * 1000000000));
         sender.setUserType("PERSONAL");
 
         SecurityQuestion sq1 = new SecurityQuestion();
-        sq1.setQuestion("Q?");
-        sq1.setAnswerHash("A");
+        sq1.setQuestion("Fav color?");
+        sq1.setAnswerHash("blue");
 
-        int senderId = authService.registerUser(
+        senderId = authService.registerUser(
                 sender,
-                "pass123",
+                "password123",
                 "1234",
                 sq1,
-                null   //  PERSONAL USER → no business profile
+                null
         );
 
-        /* ================= RECEIVER ================= */
+        /* ---------- RECEIVER ---------- */
         User receiver = new User();
         receiver.setFullName("Receiver");
         receiver.setEmail("receiver_" + System.currentTimeMillis() + "@mail.com");
-        receiver.setPhone("6" + (int) (Math.random() * 1000000000));
+        receiver.setPhone("8" + (int)(Math.random() * 1000000000));
         receiver.setUserType("PERSONAL");
 
         SecurityQuestion sq2 = new SecurityQuestion();
-        sq2.setQuestion("Q?");
-        sq2.setAnswerHash("A");
+        sq2.setQuestion("Fav city?");
+        sq2.setAnswerHash("blr");
 
-        int receiverId = authService.registerUser(
+        receiverId = authService.registerUser(
                 receiver,
-                "pass123",
+                "password123",
                 "1234",
                 sq2,
-                null   //  PERSONAL USER
+                null
         );
 
-        /* ================= ADD MONEY ================= */
-        WalletService walletService = new WalletService();
-        walletService.addMoney(senderId, 1000);
+        // Add money to sender wallet
+        walletService.addMoney(senderId, 5000);
+    }
 
-        /* ================= SEND MONEY ================= */
-        TransactionService transactionService = new TransactionService();
-        transactionService.sendMoney(senderId, receiverId, 300);
+    /* ================= TEST 1 ================= */
+    @Test
+    void testSendMoneySuccess() throws Exception {
+
+        transactionService.sendMoney(senderId, receiverId, 2000);
 
         double senderBalance =
                 walletService.getWallet(senderId).getBalance();
@@ -74,8 +77,49 @@ public class TransactionServiceTest {
         double receiverBalance =
                 walletService.getWallet(receiverId).getBalance();
 
-        assertEquals(700, senderBalance);
-        assertEquals(300, receiverBalance);
+        assertEquals(3000, senderBalance);
+        assertEquals(2000, receiverBalance);
+    }
+
+    /* ================= TEST 2 ================= */
+    @Test
+    void testSendMoneyInsufficientBalance() {
+
+        Exception ex = assertThrows(
+                Exception.class,
+                () -> transactionService.sendMoney(senderId, receiverId, 8000)
+        );
+
+        assertEquals("Insufficient balance.", ex.getMessage());
+    }
+
+    /* ================= TEST 3 ================= */
+    @Test
+    void testSendMoneyToSelf() {
+
+        Exception ex = assertThrows(
+                Exception.class,
+                () -> transactionService.sendMoney(senderId, senderId, 500)
+        );
+
+        assertEquals(
+                "Sender and receiver cannot be the same.",
+                ex.getMessage()
+        );
+    }
+
+    /* ================= TEST 4 ================= */
+    @Test
+    void testSendMoneyInvalidAmount() {
+
+        Exception ex = assertThrows(
+                Exception.class,
+                () -> transactionService.sendMoney(senderId, receiverId, -100)
+        );
+
+        assertEquals(
+                "Amount must be greater than zero.",
+                ex.getMessage()
+        );
     }
 }
-

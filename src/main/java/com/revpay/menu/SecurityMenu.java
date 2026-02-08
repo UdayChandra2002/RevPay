@@ -1,12 +1,15 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.User;
 import com.revpay.service.UserService;
 
 import java.util.Scanner;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class SecurityMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(SecurityMenu.class);
     private final User user;
 
     public SecurityMenu(User user) {
@@ -18,7 +21,7 @@ public class SecurityMenu {
         Scanner sc = new Scanner(System.in);
         UserService service = new UserService();
 
-        System.out.println("""
+        logger.info("""
             ===== SECURITY =====
             1. Change Login Password
             2. Change Transaction PIN
@@ -44,7 +47,7 @@ public class SecurityMenu {
                     service.changePassword(
                             user.getUserId(), cur, newPwd, confirm);
 
-                    System.out.println("Password changed successfully!");
+                    logger.info("Password changed successfully!");
                 }
 
                 case 2 -> {
@@ -60,7 +63,7 @@ public class SecurityMenu {
                     service.changeTransactionPin(
                             user.getUserId(), curPin, newPin, confirm);
 
-                    System.out.println("Transaction PIN updated!");
+                    logger.info("Transaction PIN updated!");
                 }
             }
         } catch (Exception e) {

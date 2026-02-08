@@ -1,12 +1,16 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.User;
 import com.revpay.service.AuthService;
 
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LoginMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(LoginMenu.class);
     public void show() {
 
         Scanner sc = new Scanner(System.in);
@@ -35,7 +39,7 @@ public class LoginMenu {
 
                 System.out.println(e.getMessage());
 
-                System.out.println("""
+                logger.info(""" 
                     1. Try Again
                     2. Forgot Password
                     3. Exit

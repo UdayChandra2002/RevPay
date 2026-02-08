@@ -1,5 +1,6 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.Invoice;
 import com.revpay.model.InvoiceItem;
 import com.revpay.model.User;
@@ -10,9 +11,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class InvoiceMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(InvoiceMenu.class);
     private final User user;
 
     public InvoiceMenu(User user) {
@@ -28,7 +32,7 @@ public class InvoiceMenu {
         invoice.setBusinessId(user.getUserId());
         invoice.setStatus("PENDING");
 
-        System.out.println("===== CREATE INVOICE =====");
+        logger.info("===== CREATE INVOICE =====");
 
         /* Customer */
         System.out.print("Enter Customer Name: ");
@@ -90,12 +94,12 @@ public class InvoiceMenu {
             int invoiceId =
                     service.createInvoice(invoice, items);
 
-            System.out.println("\nInvoice created successfully!");
-            System.out.println("Invoice ID: " + invoiceId);
-            System.out.println("Status: PENDING");
+            logger.info("\nInvoice created successfully!");
+            logger.info("Invoice ID: " + invoiceId);
+            logger.info("Status: PENDING");
 
         } catch (Exception e) {
-            System.out.println("Failed to create invoice: " + e.getMessage());
+            logger.info("Failed to create invoice: " + e.getMessage());
         }
     }
 }

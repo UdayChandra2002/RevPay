@@ -1,12 +1,16 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.User;
 import com.revpay.service.LoanService;
 
 import java.sql.ResultSet;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LoanStatusMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(LoanStatusMenu.class);
     private final User user;
 
     public LoanStatusMenu(User user) {
@@ -21,7 +25,7 @@ public class LoanStatusMenu {
             ResultSet rs =
                     loanService.getLoansByBusiness(user.getUserId());
 
-            System.out.println("===== LOAN STATUS =====");
+            logger.info("===== LOAN STATUS =====");
 
             boolean found = false;
 
@@ -38,7 +42,7 @@ public class LoanStatusMenu {
             }
 
             if (!found) {
-                System.out.println("No loan applications found.");
+                logger.info("No loan applications found.");
             }
 
         } catch (Exception e) {

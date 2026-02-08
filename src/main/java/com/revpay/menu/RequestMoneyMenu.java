@@ -1,5 +1,6 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.MoneyRequest;
 import com.revpay.model.User;
 import com.revpay.service.MoneyRequestService;
@@ -9,9 +10,11 @@ import com.revpay.util.PasswordUtil;
 
 import java.util.List;
 import java.util.Scanner;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class RequestMoneyMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(RequestMoneyMenu.class);
     private final User user;
 
     public RequestMoneyMenu(User user) {
@@ -24,7 +27,7 @@ public class RequestMoneyMenu {
         MoneyRequestService requestService = new MoneyRequestService();
         UserService userService = new UserService();
 
-        System.out.println("""
+        logger.info("""
             ===== REQUEST MONEY =====
             1. Create Money Request
             2. View Incoming Requests
@@ -72,7 +75,7 @@ public class RequestMoneyMenu {
                             amount
                     );
 
-                    System.out.println("Money request sent successfully!");
+                    logger.info("Money request sent successfully!");
                 }
 
                 /* ================= INCOMING REQUESTS ================= */
@@ -81,7 +84,7 @@ public class RequestMoneyMenu {
                             requestService.getIncomingRequests(user.getUserId());
 
                     if (requests.isEmpty()) {
-                        System.out.println("No incoming requests.");
+                        logger.info("No incoming requests.");
                         return;
                     }
 
@@ -128,15 +131,15 @@ public class RequestMoneyMenu {
                         }
 
                         requestService.acceptRequest(req.getRequestId());
-                        System.out.println("Request accepted and money transferred.");
+                        logger.info("Request accepted and money transferred.");
 
                     } else if (action == 2) {
 
-                        System.out.print("Enter decline reason (optional): ");
+                        logger.info("Enter decline reason (optional): ");
                         String reason = sc.nextLine();
 
                         requestService.declineRequest(req.getRequestId(), reason);
-                        System.out.println("Request declined.");
+                        logger.info("Request declined.");
                     }
                 }
 

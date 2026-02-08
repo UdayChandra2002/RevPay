@@ -77,26 +77,12 @@ public class TransactionService {
 
     /* ================= ADD MONEY ================= */
 
-    public void recordAddMoney(int userId, double amount)
-            throws Exception {
+    public void recordAddMoney(int userId, double amount) throws Exception {
 
         if (amount <= 0) {
             throw new Exception("Amount must be greater than zero.");
         }
 
-        Wallet wallet = walletDAO.getWalletByUserId(userId);
-
-        if (wallet == null) {
-            throw new Exception("Wallet not found.");
-        }
-
-        /* ✅ Wallet update ONLY here */
-        walletDAO.updateBalance(
-                userId,
-                wallet.getBalance() + amount
-        );
-
-        /* ✅ Record transaction */
         Transaction txn = new Transaction();
         txn.setSenderId(userId);     // self
         txn.setReceiverId(userId);   // self
@@ -106,14 +92,8 @@ public class TransactionService {
         txn.setRemarks("Money added to wallet");
 
         transactionDAO.insertTransaction(txn);
-
-        /* 🔔 Notification */
-        Notification n = new Notification();
-        n.setUserId(userId);
-        n.setMessage("₹" + amount + " added to your wallet");
-        n.setType("WALLET");
-        notificationService.sendNotification(n);
     }
+
 
     /* ================= VIEW TRANSACTIONS ================= */
 

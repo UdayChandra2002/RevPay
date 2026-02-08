@@ -1,14 +1,17 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.Invoice;
 import com.revpay.model.User;
 import com.revpay.service.InvoiceService;
 
 import java.util.List;
 import java.util.Scanner;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class ManageInvoiceMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(ManageInvoiceMenu.class);
     private final User user;
 
     public ManageInvoiceMenu(User user) {
@@ -21,7 +24,7 @@ public class ManageInvoiceMenu {
         InvoiceService service = new InvoiceService();
 
         while (true) {
-            System.out.println("""
+            logger.info("""
                 ===== MANAGE INVOICES =====
                 1. View All Invoices
                 2. View Pending Invoices
@@ -63,7 +66,7 @@ public class ManageInvoiceMenu {
                         sc.nextLine();
 
                         service.cancelInvoice(invoiceId);
-                        System.out.println("Invoice cancelled successfully.");
+                        logger.info("Invoice cancelled successfully.");
                     }
 
                     case 5 -> {
@@ -74,7 +77,7 @@ public class ManageInvoiceMenu {
                 }
 
             } catch (Exception e) {
-                System.out.println("Error: " + e.getMessage());
+                logger.info("Error: " + e.getMessage());
             }
         }
     }

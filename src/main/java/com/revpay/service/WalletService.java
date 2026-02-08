@@ -28,11 +28,11 @@ public class WalletService {
             throw new Exception("Wallet not found.");
         }
 
+        // ✅ Update balance ONLY here
         double newBalance = wallet.getBalance() + amount;
         walletDAO.updateBalance(userId, newBalance);
 
-
-        //----------------n
+        // 🔔 Notification
         NotificationService notificationService = new NotificationService();
         Notification n = new Notification();
         n.setUserId(userId);
@@ -40,9 +40,8 @@ public class WalletService {
         n.setType("WALLET");
 
         notificationService.sendNotification(n);
-        //---------------n
-
     }
+
 
     /* ================= GET BALANCE ================= */
 

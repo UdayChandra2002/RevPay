@@ -1,5 +1,6 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.Transaction;
 import com.revpay.model.User;
 import com.revpay.service.TransactionService;
@@ -9,9 +10,12 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TransactionMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(TransactionMenu.class);
     private final User user;
 
     public TransactionMenu(User user) {
@@ -23,7 +27,7 @@ public class TransactionMenu {
         Scanner sc = new Scanner(System.in);
         TransactionService service = new TransactionService();
 
-        System.out.println("""
+        logger.info("""
             ===== TRANSACTION HISTORY =====
             1. View All Transactions
             2. View Sent Transactions
@@ -44,7 +48,7 @@ public class TransactionMenu {
                     service.getTransactionsByUser(user.getUserId());
 
             if (list.isEmpty()) {
-                System.out.println("No transactions found.");
+                logger.info("No transactions found.");
                 return;
             }
 

@@ -1,20 +1,23 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.BusinessProfile;
 import com.revpay.model.SecurityQuestion;
 import com.revpay.model.User;
 import com.revpay.service.AuthService;
 
 import java.util.Scanner;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class RegisterMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(RegisterMenu.class);
     public void show() {
 
         Scanner sc = new Scanner(System.in);
         AuthService authService = new AuthService();
 
-        System.out.println("""
+        logger.info("""
             Select Account Type:
             1. Personal
             2. Business

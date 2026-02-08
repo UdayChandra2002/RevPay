@@ -1,5 +1,6 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.PaymentMethod;
 import com.revpay.model.User;
 import com.revpay.service.PaymentMethodService;
@@ -7,12 +8,15 @@ import com.revpay.service.TransactionService;
 import com.revpay.service.WalletService;
 import com.revpay.util.OTPUtil;
 import com.revpay.util.PasswordUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class AddMoneyMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(AddMoneyMenu.class);
     private final User user;
 
     public AddMoneyMenu(User user) {
@@ -27,7 +31,7 @@ public class AddMoneyMenu {
         TransactionService txnService = new TransactionService();
 
         try {
-            /* 1️⃣ Show cards */
+            /*  Show cards */
             List<PaymentMethod> cards = pmService.getCards(user.getUserId());
 
             if (cards.isEmpty()) {
@@ -35,7 +39,7 @@ public class AddMoneyMenu {
                 return;
             }
 
-            System.out.println("===== ADD MONEY =====");
+            logger.info("===== ADD MONEY =====");
             System.out.println("Select Payment Card:");
 
             for (int i = 0; i < cards.size(); i++) {
@@ -56,7 +60,7 @@ public class AddMoneyMenu {
                 return;
             }
 
-            /* 2️⃣ Amount */
+            /*  Amount */
             System.out.print("Enter amount to add: ");
             double amount = sc.nextDouble();
             sc.nextLine();
@@ -66,7 +70,7 @@ public class AddMoneyMenu {
                 return;
             }
 
-            /* 3️⃣ Transaction PIN */
+            /*  Transaction PIN */
             System.out.print("Enter Transaction PIN: ");
             String enteredPin = sc.nextLine();
 
@@ -75,7 +79,7 @@ public class AddMoneyMenu {
                 return;
             }
 
-            /* 4️⃣ 2FA */
+            /*  2FA */
             String otp = OTPUtil.generateOTP();
             System.out.println("Your security code is: " + otp);
 
@@ -87,18 +91,18 @@ public class AddMoneyMenu {
                 return;
             }
 
-            /* 5️⃣ Add money */
+            /*  Add money */
             walletService.addMoney(user.getUserId(), amount);
 
-            /* 6️⃣ Record transaction */
+            /*  Record transaction */
             txnService.recordAddMoney(user.getUserId(), amount);
 
-            System.out.println("Money added successfully!");
-            System.out.println("Updated Wallet Balance: ₹" +
+            logger.info("Money added successfully!");
+            logger.info("Updated Wallet Balance: ₹" +
                     walletService.getBalance(user.getUserId()));
 
         } catch (Exception e) {
-            System.out.println("Failed to add money: " + e.getMessage());
+            logger.info("Failed to add money: " + e.getMessage());
         }
     }
 }

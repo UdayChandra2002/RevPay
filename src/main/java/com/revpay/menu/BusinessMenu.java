@@ -1,12 +1,16 @@
 package com.revpay.menu;
 
+import com.revpay.main.RevPayApplication;
 import com.revpay.model.User;
 import com.revpay.service.WalletService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
 public class BusinessMenu {
-
+    private static final Logger logger =
+            LogManager.getLogger(BusinessMenu.class);
     private final User user;
 
     public BusinessMenu(User user) {
@@ -20,7 +24,7 @@ public class BusinessMenu {
 
         while (true) {
 
-            System.out.println("""
+            logger.info("""
                 ===== BUSINESS MENU =====
                 1. View Wallet Balance
                 2. Add Money
