@@ -1,254 +1,75 @@
-2026-02-08 16:00:09 [main] ERROR com.revpay.main.RevPayApplication - Unexpected error occurred in application
-java.util.InputMismatchException: null
-	at java.base/java.util.Scanner.throwFor(Scanner.java:964) ~[?:?]
-	at java.base/java.util.Scanner.next(Scanner.java:1619) ~[?:?]
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2284) ~[?:?]
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2238) ~[?:?]
-	at com.revpay.menu.MainMenu.show(MainMenu.java:19) ~[classes/:?]
-	at com.revpay.main.RevPayApplication.main(RevPayApplication.java:21) [classes/:?]
-2026-02-08 16:00:09 [main] INFO  com.revpay.main.RevPayApplication - RevPay Application Stopped
-2026-02-08 17:30:31 [main] ERROR com.revpay.main.RevPayApplication -       RevPay Application Started    
-2026-02-08 17:31:56 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
-2026-02-08 17:35:47 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
-2026-02-08 17:35:47 [main] INFO  com.revpay.main.RevPayApplication - ===== REV PAY =====
+2026-02-09 14:32:54 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-02-09 14:32:54 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
 1. Register
 2. Login
 3. Exit
 
-2026-02-08 17:54:45 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
-2026-02-08 17:54:45 [main] INFO  com.revpay.main.RevPayApplication - ===== REV PAY =====
-1. Register
-2. Login
-3. Exit
-
-2026-02-08 17:55:16 [main] INFO  com.revpay.main.RevPayApplication - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 17:55:30 [main] INFO  com.revpay.main.RevPayApplication - ===== ADD MONEY =====
-2026-02-08 17:55:55 [main] INFO  com.revpay.main.RevPayApplication - Money added successfully!
-2026-02-08 17:55:55 [main] INFO  com.revpay.main.RevPayApplication - Updated Wallet Balance: ₹26400.0
-2026-02-08 17:55:55 [main] INFO  com.revpay.main.RevPayApplication - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 17:56:03 [main] INFO  com.revpay.main.RevPayApplication - ===== REV PAY =====
-1. Register
-2. Login
-3. Exit
-
-2026-02-08 17:59:52 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
-2026-02-08 17:59:52 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
-1. Register
-2. Login
-3. Exit
-
-2026-02-08 18:00:26 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 18:00:33 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
-2026-02-08 18:00:56 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 18:01:54 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
-2026-02-08 18:02:52 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 18:04:14 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
-1. Register
-2. Login
-3. Exit
-
-2026-02-08 18:04:30 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 18:04:32 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 18:04:45 [main] INFO  com.revpay.menu.PaymentMethodMenu - ===== PAYMENT METHODS =====
-1. Add Card
-2. View Cards
-3. Remove Card
-4. Back
-
-2026-02-08 18:05:33 [main] INFO  com.revpay.menu.PaymentMethodMenu - Card added successfully.
-2026-02-08 18:05:33 [main] INFO  com.revpay.menu.PaymentMethodMenu - ===== PAYMENT METHODS =====
-1. Add Card
-2. View Cards
-3. Remove Card
-4. Back
-
-2026-02-08 18:05:52 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 18:05:53 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
-2026-02-08 18:06:13 [main] INFO  com.revpay.menu.AddMoneyMenu - Money added successfully!
-2026-02-08 18:06:13 [main] INFO  com.revpay.menu.AddMoneyMenu - Updated Wallet Balance: ₹40000.0
-2026-02-08 18:06:13 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
-1. View Wallet Balance
-2. Add Money
-3. Send Money
-4. Request Money
-5. View Transactions
-6. Create Invoice
-7. View / Manage Invoices
-8. Apply for Loan
-9. View Loan Status
-10. View Business Analytics
-11. Add / Manage Payment Methods
-12. View Notifications
-13. Change Password / Transaction PIN
-14. Logout
-
-2026-02-08 18:07:11 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
-1. Register
-2. Login
-3. Exit
-
-2026-02-08 18:07:27 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
+2026-02-09 14:33:15 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
     2. Forgot Password
     3. Exit
 
-2026-02-08 18:08:51 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+2026-02-09 14:33:35 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
 1. Register
 2. Login
 3. Exit
 
-2026-02-08 18:09:58 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
-    2. Forgot Password
-    3. Exit
+2026-02-09 14:33:37 [main] INFO  com.revpay.menu.RegisterMenu - Select Account Type:
+1. Personal
+2. Business
 
-2026-02-08 18:10:00 [main] ERROR com.revpay.main.RevPayApplication - Unexpected error occurred in application
-java.util.InputMismatchException: null
-	at java.base/java.util.Scanner.throwFor(Scanner.java:964) ~[?:?]
-	at java.base/java.util.Scanner.next(Scanner.java:1619) ~[?:?]
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2284) ~[?:?]
-	at java.base/java.util.Scanner.nextInt(Scanner.java:2238) ~[?:?]
-	at com.revpay.menu.LoginMenu.show(LoginMenu.java:49) ~[classes/:?]
-	at com.revpay.menu.MainMenu.show(MainMenu.java:30) ~[classes/:?]
-	at com.revpay.main.RevPayApplication.main(RevPayApplication.java:21) [classes/:?]
-2026-02-08 18:10:00 [main] INFO  com.revpay.main.RevPayApplication - RevPay Application Stopped
-2026-02-08 18:10:38 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
-2026-02-08 18:10:38 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+2026-02-09 14:34:14 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
 1. Register
 2. Login
 3. Exit
 
-2026-02-08 18:10:50 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
-    2. Forgot Password
-    3. Exit
+2026-02-09 14:35:21 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
 
-2026-02-08 18:11:10 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
-    2. Forgot Password
-    3. Exit
+2026-02-09 14:35:29 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
 
-2026-02-08 18:11:26 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
-    2. Forgot Password
-    3. Exit
-
-2026-02-08 18:11:34 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
-    2. Forgot Password
-    3. Exit
+2026-02-09 14:35:56 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
+2026-02-09 14:36:35 [main] INFO  com.revpay.menu.AddMoneyMenu - Money added successfully!
+2026-02-09 14:36:35 [main] INFO  com.revpay.menu.AddMoneyMenu - Updated Wallet Balance: ₹56400.0
+2026-02-09 14:36:35 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
 
