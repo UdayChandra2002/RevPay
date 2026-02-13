@@ -15,6 +15,7 @@ public class MainMenu {
 
         while (true) {
             logger.info("""
+                
                 ===== REV PAY =====
                 1. Register
                 2. Login

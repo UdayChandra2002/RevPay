@@ -1,28 +1,279 @@
-2026-02-09 14:32:54 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
-2026-02-09 14:32:54 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+2026-02-10 10:21:12 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-02-10 10:21:12 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
 1. Register
 2. Login
 3. Exit
 
-2026-02-09 14:33:15 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
-    2. Forgot Password
-    3. Exit
+2026-02-10 10:21:49 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
 
-2026-02-09 14:33:35 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+2026-02-10 10:22:18 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
 1. Register
 2. Login
 3. Exit
 
-2026-02-09 14:33:37 [main] INFO  com.revpay.menu.RegisterMenu - Select Account Type:
+2026-02-10 10:22:21 [main] INFO  com.revpay.menu.RegisterMenu - Select Account Type:
 1. Personal
 2. Business
 
-2026-02-09 14:34:14 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+2026-02-10 10:24:34 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
 1. Register
 2. Login
 3. Exit
 
-2026-02-09 14:35:21 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+2026-02-10 10:24:56 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:25:00 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:25:08 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:25:24 [main] INFO  com.revpay.menu.PaymentMethodMenu - ===== PAYMENT METHODS =====
+1. Add Card
+2. View Cards
+3. Remove Card
+4. Back
+
+2026-02-10 10:26:07 [main] INFO  com.revpay.menu.PaymentMethodMenu - Card added successfully.
+2026-02-10 10:26:07 [main] INFO  com.revpay.menu.PaymentMethodMenu - ===== PAYMENT METHODS =====
+1. Add Card
+2. View Cards
+3. Remove Card
+4. Back
+
+2026-02-10 10:26:10 [main] INFO  com.revpay.menu.PaymentMethodMenu - ===== PAYMENT METHODS =====
+1. Add Card
+2. View Cards
+3. Remove Card
+4. Back
+
+2026-02-10 10:26:21 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:26:23 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
+2026-02-10 10:26:45 [main] INFO  com.revpay.menu.AddMoneyMenu - Money added successfully!
+2026-02-10 10:26:45 [main] INFO  com.revpay.menu.AddMoneyMenu - Updated Wallet Balance: ₹20000.0
+2026-02-10 10:26:45 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:27:00 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
+2026-02-10 10:27:09 [main] INFO  com.revpay.menu.AddMoneyMenu - Failed to add money: null
+2026-02-10 10:27:09 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:27:13 [main] INFO  com.revpay.menu.SendMoneyMenu - ===== SEND MONEY =====
+2026-02-10 10:27:28 [main] INFO  com.revpay.menu.SendMoneyMenu - Failed to send money: null
+2026-02-10 10:27:28 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:27:36 [main] INFO  com.revpay.menu.SendMoneyMenu - ===== SEND MONEY =====
+2026-02-10 10:28:16 [main] INFO  com.revpay.menu.SendMoneyMenu - Money sent successfully!
+2026-02-10 10:28:16 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:39:26 [main] INFO  com.revpay.menu.TransactionMenu -     ===== TRANSACTION HISTORY =====
+    1. View All Transactions
+    2. View Sent Transactions
+    3. View Received Transactions
+    4. Filter by Date Range
+    5. Filter by Amount Range
+    6. Filter by Transaction Type
+    7. Filter by Status
+    8. Back
+
+2026-02-10 10:39:29 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:39:40 [main] INFO  com.revpay.menu.TransactionMenu -     ===== TRANSACTION HISTORY =====
+    1. View All Transactions
+    2. View Sent Transactions
+    3. View Received Transactions
+    4. Filter by Date Range
+    5. Filter by Amount Range
+    6. Filter by Transaction Type
+    7. Filter by Status
+    8. Back
+
+2026-02-10 10:39:46 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:39:55 [main] INFO  com.revpay.menu.TransactionMenu -     ===== TRANSACTION HISTORY =====
+    1. View All Transactions
+    2. View Sent Transactions
+    3. View Received Transactions
+    4. Filter by Date Range
+    5. Filter by Amount Range
+    6. Filter by Transaction Type
+    7. Filter by Status
+    8. Back
+
+2026-02-10 10:40:00 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:40:22 [main] INFO  com.revpay.menu.NotificationMenu - ===== NOTIFICATIONS =====
+2026-02-10 10:40:22 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:40:38 [main] INFO  com.revpay.menu.SecurityMenu -     ===== SECURITY =====
+    1. Change Login Password
+    2. Change Transaction PIN
+    3. Back
+
+2026-02-10 10:41:13 [main] INFO  com.revpay.menu.SecurityMenu - Password changed successfully!
+2026-02-10 10:41:13 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:41:30 [main] INFO  com.revpay.menu.SecurityMenu -     ===== SECURITY =====
+    1. Change Login Password
+    2. Change Transaction PIN
+    3. Back
+
+2026-02-10 10:41:42 [main] INFO  com.revpay.menu.SecurityMenu - Transaction PIN updated!
+2026-02-10 10:41:42 [main] INFO  com.revpay.menu.PersonalMenu - ===== PERSONAL MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Add / Manage Payment Methods
+7. View Notifications
+8. Change Password / Transaction PIN
+9. Logout
+
+2026-02-10 10:41:54 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+1. Register
+2. Login
+3. Exit
+
+2026-02-10 10:41:59 [main] INFO  com.revpay.menu.RegisterMenu - Select Account Type:
+1. Personal
+2. Business
+
+2026-02-10 10:43:10 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+1. Register
+2. Login
+3. Exit
+
+2026-02-10 10:43:24 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
 1. View Wallet Balance
 2. Add Money
 3. Send Money
@@ -38,7 +289,27 @@
 13. Change Password / Transaction PIN
 14. Logout
 
-2026-02-09 14:35:29 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+2026-02-10 10:43:53 [main] INFO  com.revpay.menu.InvoiceMenu - ===== CREATE INVOICE =====
+2026-02-10 10:57:58 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-02-10 10:57:58 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+1. Register
+2. Login
+3. Exit
+
+2026-02-10 10:58:02 [main] INFO  com.revpay.menu.MainMenu - ===== REV PAY =====
+1. Register
+2. Login
+3. Exit
+
+2026-02-10 10:58:20 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
+    2. Forgot Password
+    3. Exit
+
+2026-02-10 10:58:36 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
+    2. Forgot Password
+    3. Exit
+
+2026-02-10 10:58:57 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
 1. View Wallet Balance
 2. Add Money
 3. Send Money
@@ -54,10 +325,232 @@
 13. Change Password / Transaction PIN
 14. Logout
 
-2026-02-09 14:35:56 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
-2026-02-09 14:36:35 [main] INFO  com.revpay.menu.AddMoneyMenu - Money added successfully!
-2026-02-09 14:36:35 [main] INFO  com.revpay.menu.AddMoneyMenu - Updated Wallet Balance: ₹56400.0
-2026-02-09 14:36:35 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+2026-02-10 10:59:00 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 10:59:15 [main] INFO  com.revpay.menu.TransactionMenu -     ===== TRANSACTION HISTORY =====
+    1. View All Transactions
+    2. View Sent Transactions
+    3. View Received Transactions
+    4. Filter by Date Range
+    5. Filter by Amount Range
+    6. Filter by Transaction Type
+    7. Filter by Status
+    8. Back
+
+2026-02-10 10:59:17 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 11:26:06 [main] INFO  com.revpay.main.RevPayApplication -       RevPay Application Started    
+2026-02-10 11:26:06 [main] INFO  com.revpay.menu.MainMenu - 
+===== REV PAY =====
+1. Register
+2. Login
+3. Exit
+
+2026-02-10 11:27:24 [main] ERROR com.revpay.main.RevPayApplication - Unexpected error occurred in application
+java.util.InputMismatchException: null
+	at java.base/java.util.Scanner.throwFor(Scanner.java:964) ~[?:?]
+	at java.base/java.util.Scanner.next(Scanner.java:1619) ~[?:?]
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2284) ~[?:?]
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2238) ~[?:?]
+	at com.revpay.menu.MainMenu.show(MainMenu.java:26) ~[classes/:?]
+	at com.revpay.main.RevPayApplication.main(RevPayApplication.java:21) [classes/:?]
+2026-02-10 11:27:24 [main] INFO  com.revpay.main.RevPayApplication - RevPay Application Stopped
+2026-02-10 11:27:39 [main] INFO  com.revpay.menu.MainMenu - 
+===== REV PAY =====
+1. Register
+2. Login
+3. Exit
+
+2026-02-10 11:27:55 [main] INFO  com.revpay.menu.BusinessMenu - ===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 11:28:27 [main] INFO  com.revpay.menu.MainMenu - 
+===== REV PAY =====
+1. Register
+2. Login
+3. Exit
+
+2026-02-10 11:28:48 [main] INFO  com.revpay.menu.LoginMenu -     1. Try Again
+    2. Forgot Password
+    3. Exit
+
+2026-02-10 11:29:05 [main] INFO  com.revpay.menu.BusinessMenu - 
+===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 19:06:42 [main] INFO  com.revpay.menu.MainMenu - 
+===== REV PAY =====
+1. Register
+2. Login
+3. Exit
+
+2026-02-10 19:07:25 [main] INFO  com.revpay.menu.BusinessMenu - 
+===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 19:07:31 [main] INFO  com.revpay.menu.BusinessMenu - 
+===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 19:07:37 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
+2026-02-10 19:07:59 [main] INFO  com.revpay.menu.AddMoneyMenu - Money added successfully!
+2026-02-10 19:07:59 [main] INFO  com.revpay.menu.AddMoneyMenu - Updated Wallet Balance: ₹60400.0
+2026-02-10 19:07:59 [main] INFO  com.revpay.menu.BusinessMenu - 
+===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 19:08:13 [main] INFO  com.revpay.menu.TransactionMenu -     ===== TRANSACTION HISTORY =====
+    1. View All Transactions
+    2. View Sent Transactions
+    3. View Received Transactions
+    4. Filter by Date Range
+    5. Filter by Amount Range
+    6. Filter by Transaction Type
+    7. Filter by Status
+    8. Back
+
+2026-02-10 19:08:20 [main] INFO  com.revpay.menu.BusinessMenu - 
+===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 19:08:26 [main] INFO  com.revpay.menu.TransactionMenu -     ===== TRANSACTION HISTORY =====
+    1. View All Transactions
+    2. View Sent Transactions
+    3. View Received Transactions
+    4. Filter by Date Range
+    5. Filter by Amount Range
+    6. Filter by Transaction Type
+    7. Filter by Status
+    8. Back
+
+2026-02-10 19:08:31 [main] INFO  com.revpay.menu.BusinessMenu - 
+===== BUSINESS MENU =====
+1. View Wallet Balance
+2. Add Money
+3. Send Money
+4. Request Money
+5. View Transactions
+6. Create Invoice
+7. View / Manage Invoices
+8. Apply for Loan
+9. View Loan Status
+10. View Business Analytics
+11. Add / Manage Payment Methods
+12. View Notifications
+13. Change Password / Transaction PIN
+14. Logout
+
+2026-02-10 19:08:33 [main] INFO  com.revpay.menu.AddMoneyMenu - ===== ADD MONEY =====
+2026-02-10 19:08:51 [main] INFO  com.revpay.menu.AddMoneyMenu - Money added successfully!
+2026-02-10 19:08:51 [main] INFO  com.revpay.menu.AddMoneyMenu - Updated Wallet Balance: ₹160400.0
+2026-02-10 19:08:51 [main] INFO  com.revpay.menu.BusinessMenu - 
+===== BUSINESS MENU =====
 1. View Wallet Balance
 2. Add Money
 3. Send Money

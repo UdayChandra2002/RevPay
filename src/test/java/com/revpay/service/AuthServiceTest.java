@@ -19,8 +19,8 @@ class AuthServiceTest {
         authService = new AuthService();
 
         User user = new User();
-        user.setFullName("Auth Test User");
-        email = "auth_" + System.currentTimeMillis() + "@mail.com";
+        user.setFullName("Uday_Chandra");
+        email = "udaychandra" + System.currentTimeMillis() + "@mail.com";
         user.setEmail(email);
         user.setPhone("9" + (int)(Math.random() * 1000000000));
         user.setUserType("PERSONAL");
@@ -29,7 +29,7 @@ class AuthServiceTest {
         sq.setQuestion("Fav color?");
         sq.setAnswerHash("blue");
 
-        // ✅ Create user + wallet
+        //  Create user + wallet
         userId = authService.registerUser(
                 user,
                 "password123",

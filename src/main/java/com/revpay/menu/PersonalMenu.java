@@ -22,6 +22,7 @@ public class PersonalMenu {
 
         while (true) {
             logger.info("""
+                
                 ===== PERSONAL MENU =====
                 1. View Wallet Balance
                 2. Add Money

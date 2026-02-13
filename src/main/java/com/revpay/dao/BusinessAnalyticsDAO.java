@@ -88,13 +88,13 @@ public class BusinessAnalyticsDAO {
     public ResultSet getTopCustomers(int businessId) throws SQLException {
 
         String sql = """
-SELECT sender_id, SUM(amount) AS total_paid
-FROM transactions
-WHERE receiver_id = ?
-  AND status = 'SUCCESS'
-GROUP BY sender_id
-ORDER BY total_paid DESC
-""";
+        SELECT sender_id, SUM(amount) AS total_paid
+        FROM transactions
+        WHERE receiver_id = ?
+          AND status = 'SUCCESS'
+        GROUP BY sender_id
+        ORDER BY total_paid DESC
+        """;
 
         Connection con = DBConnection.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);

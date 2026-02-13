@@ -25,6 +25,7 @@ public class BusinessMenu {
         while (true) {
 
             logger.info("""
+                
                 ===== BUSINESS MENU =====
                 1. View Wallet Balance
                 2. Add Money

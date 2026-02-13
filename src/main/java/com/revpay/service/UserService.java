@@ -41,7 +41,7 @@ public class UserService {
         String newHash = PasswordUtil.hash(newPassword);
         userDAO.updatePassword(userId, newHash);
 
-        // 🔔 Notification
+        //  Notification
         Notification n = new Notification();
         n.setUserId(userId);
         n.setMessage("Your login password was changed successfully");

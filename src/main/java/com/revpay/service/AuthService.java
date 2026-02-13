@@ -40,7 +40,7 @@ public class AuthService {
         sq.setAnswerHash(PasswordUtil.hash(sq.getAnswerHash()));
         securityQuestionDAO.saveQuestion(sq);
 
-        // ✅ ONLY FOR BUSINESS USERS
+        //  ONLY FOR BUSINESS USERS
         if ("BUSINESS".equals(user.getUserType())) {
             businessProfile.setBusinessId(userId);
 

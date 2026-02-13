@@ -13,7 +13,7 @@ public class RevPayApplication {
 
         System.out.println(" ");
         System.out.println("===================================");
-        logger.info("      RevPay Application Started    ");
+        System.out.println("      RevPay Application Started    ");
         System.out.println("===================================");
 
         try {
